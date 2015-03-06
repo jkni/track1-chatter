@@ -1501,7 +1501,9 @@ ensure the program stays in a safe state.  We're going to use the
 
 
 > An `atom` is like a box that protects information from being changed in
-> an unsafe way.  You simply pass the information into the `atom`.
+> an unsafe way.  You simply pass the information into the `atom`.  Note that
+> atoms hold a single value, but that value may be a collection, like a list, 
+> vector, or map.
 
 Instead of having the `chat-messages` variable point to our vector of messages,
 we're going to have it point to the `atom` protecting the vector.
