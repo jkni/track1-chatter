@@ -61,16 +61,24 @@ the same snippet — look for the dollar signs!  The terminal you're
 using will probably have different prompts but the commands should
 work the same.
 
+<div class= "console"><pre>
+$: lein -version
+Leiningen 2.5.1 on Java 1.8.0_40-internal OpenJDK 64-Bit Server VM
+</pre>
+</div>
 
-    $: lein -version
-    Leiningen 2.5.1 on Java 1.8.0_40-internal OpenJDK 64-Bit Server VM
+<div class= "console"><pre>
+$: git --version
+git version 2.1.4
+</pre>
+</div>
 
-    $: git --version
-    git version 2.1.4
-
-    $: heroku --version
-    heroku-toolbelt/3.25.0 (x86_64-linux-gnu) ruby/2.1.5
-    You have no installed plugins.
+<div class= "console"><pre>
+$: heroku --version
+heroku-toolbelt/3.25.0 (x86_64-linux-gnu) ruby/2.1.5
+You have no installed plugins.
+</pre>
+</div>
 
 With the tools installed, we can begin working on our web app.
 
@@ -116,38 +124,43 @@ request takes to get to GitHub.  (On Windows, the command is called
 
 On my machine, working from home:
 
-        $: traceroute github.com
-        traceroute to github.com (192.30.252.130), 30 hops max, 60 byte packets
-        1  192.168.1.1 (192.168.1.1)  5.913 ms  5.908 ms  6.000 ms
-        2  * 96.120.49.33 (96.120.49.33)  30.033 ms  30.066 ms
-        3  te-0-3-0-1-sur02.webster.mn.minn.comcast.net (68.85.167.149)  30.553 ms  32.776 ms  32.785 ms
-        4  te-0-7-0-12-ar01.roseville.mn.minn.comcast.net (69.139.219.134)  32.778 ms  36.059 ms te-0-7-0-13-ar01.roseville.mn.minn.comcast.net (68.87.174.185)  35.686 ms
-        5  he-1-13-0-0-cr01.350ecermak.il.ibone.comcast.net (68.86.94.81)  42.354 ms *  43.213 ms
-        6  be-10206-cr01.newyork.ny.ibone.comcast.net (68.86.86.225)  63.574 ms  59.894 ms  62.441 ms
-        7  pos-2-5-0-0-cr01.dallas.tx.ibone.comcast.net (68.86.85.25)  64.643 ms  64.659 ms  64.653 ms
-        8  he-3-14-0-0-cr01.dallas.tx.ibone.comcast.net (68.86.85.1)  67.039 ms  67.079 ms  67.056 ms
-        9  he-0-10-0-0-pe07.ashburn.va.ibone.comcast.net (68.86.83.66)  63.013 ms  67.045 ms  88.273 ms
-        10  * * *
-        11  * * *
-        12  * * *
-        13  * * *
-        14  * * *
-        15  * * *
-        16  * * *
-        17  * * *
-        18  * * *
-        19  * * *
-        20  * * *
-        21  * * *
-        22  * * *
-        23  * * *
-        24  * * *
-        25  * * *
-        26  * * *
-        27  * * *
-        28  * * *
-        29  * * *
-        30  * * *
+<div class= "console"><pre>
+
+$: traceroute github.com
+traceroute to github.com (192.30.252.130), 30 hops max, 60 byte packets
+ 1  192.168.1.1 (192.168.1.1)  5.913 ms  5.908 ms  6.000 ms
+ 2  * 96.120.49.33 (96.120.49.33)  30.033 ms  30.066 ms
+ 3  te-0-3-0-1-sur02.webster.mn.minn.comcast.net (68.85.167.149)  30.553 ms  32.776 ms  32.785 ms
+ 4  te-0-7-0-12-ar01.roseville.mn.minn.comcast.net (69.139.219.134)  32.778 ms  36.059 ms te-0-7-0-13-ar01.roseville.mn.minn.comcast.net (68.87.174.185)  35.686 ms
+ 5  he-1-13-0-0-cr01.350ecermak.il.ibone.comcast.net (68.86.94.81)  42.354 ms *  43.213 ms
+ 6  be-10206-cr01.newyork.ny.ibone.comcast.net (68.86.86.225)  63.574 ms  59.894 ms  62.441 ms
+ 7  pos-2-5-0-0-cr01.dallas.tx.ibone.comcast.net (68.86.85.25)  64.643 ms  64.659 ms  64.653 ms
+ 8  he-3-14-0-0-cr01.dallas.tx.ibone.comcast.net (68.86.85.1)  67.039 ms  67.079 ms  67.056 ms
+ 9  he-0-10-0-0-pe07.ashburn.va.ibone.comcast.net (68.86.83.66)  63.013 ms  67.045 ms  88.273 ms
+10  * * *
+11  * * *
+12  * * *
+13  * * *
+14  * * *
+15  * * *
+16  * * *
+17  * * *
+18  * * *
+19  * * *
+20  * * *
+21  * * *
+22  * * *
+23  * * *
+24  * * *
+25  * * *
+26  * * *
+27  * * *
+28  * * *
+29  * * *
+30  * * *
+
+</pre>
+</div>
 
 + Line 1 is my computer
 + Line 2 is my router
@@ -279,10 +292,10 @@ Another useful resource is [Mozilla Developer Network](http://developer.mozilla.
 We're going to start by asking Leiningen to stub out a web application for
 us.
 
-```
+<div class= "console"><pre>
   $ : lein new compojure chatter
-```
-
+</pre>
+</div>
 
 > Lein is a tool for managing Clojure projects.
 
@@ -291,15 +304,17 @@ should result in the creation of a directory `chatter`.
 
 Move into the project directory:
 
-```
+<div class= "console"><pre>
   $: cd chatter
-```
+</pre>
+</div>
 
 Start the server with the command:
 
-```
+<div class= "console"><pre>
   $: lein ring server
-```
+</pre>
+</div>
 
 Lein will download a bunch of stuff off the Internet the first time it
 is run.  After this finishes, it should cause your default browser to
@@ -323,21 +338,23 @@ combination "Control-c".
 In Light Table, let's take a closer look at what's in the chatter directory.  It
 looks like:
 
-```
+<div class= "console"><pre>
+
 .
 ├── project.clj
 ├── README.md
 ├── resources
-│   └── public
+│   └── public
 ├── src
-│   └── chatter
-│       └── handler.clj
+│   └── chatter
+│       └── handler.clj
 └── test
     └── chatter
         └── handler_test.clj
 
 6 directories, 4 files
-```
+</pre>
+</div>
 
 ```project.clj``` is a Clojure file describing what our project does and
 what other programs it needs to run.
@@ -483,19 +500,23 @@ and coordinate work with others.
 
 Inside the chatter directory, enter the command, `git init`
 
-    $ git init
-    Initialized empty Git repository in /home/crk/chatter/.git/
+<div class= "console"><pre>
+$ git init
+Initialized empty Git repository in /home/crk/chatter/.git/
+</pre>
+</div>
 
 Now git is keeping an eye our directory.  Try asking git the status of
 our directory.
 
-    $: git status
-    On branch master
+<div class= "console"><pre>
+$: git status
+On branch master
 
-    Initial commit
+Initial commit
 
-    Untracked files:
-      (use "git add <file>..." to include in what will be committed)
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
 
 	.gitignore
 	README.md
@@ -503,7 +524,9 @@ our directory.
 	src/
 	test/
 
-    nothing added to commit but untracked files present (use "git add" to track)
+nothing added to commit but untracked files present (use "git add" to track)
+</pre>
+</div>
 
 We're on the master branch.  The master branch is the main place where
 our code will be.  It says "Initial commit" because we're just
@@ -519,54 +542,69 @@ Git follows a two-step process.  First you add the changes; they
 become staged.  Then, you commit all of the staged changes.  Let's add
 everything.
 
-    $: git add .
+<div class= "console"><pre>
+$: git add .
+</pre>
+</div>
 
 The "." tells git the current directory and below.
 
 Now when we ask git for the status:
 
-    $: git status
-    On branch master
+<div class= "console"><pre>
+$: git status
+On branch master
 
-    Initial commit
+Initial commit
 
-    Changes to be committed:
-      (use "git rm --cached <file>..." to unstage)
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
 
 	new file:   .gitignore
 	new file:   README.md
 	new file:   project.clj
 	new file:   src/chatter/handler.clj
 	new file:   test/chatter/handler_test.clj
+</pre>
+</div>
 
 All of our stuff is ready to be commited.  That requires a commit
 message.
 
-    $: git commit . -m "initial commit"
-    [master (root-commit) 44a560f] initial commit
-    5 files changed, 66 insertions(+)
-    create mode 100644 .gitignore
-    create mode 100644 README.md
-    create mode 100644 project.clj
-    create mode 100644 src/chatter/core/handler.clj
-    create mode 100644 test/chatter/core/handler_test.clj
+<div class= "console"><pre>
+$: git commit . -m "initial commit"
+[master (root-commit) 44a560f] initial commit
+ 5 files changed, 66 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 README.md
+ create mode 100644 project.clj
+ create mode 100644 src/chatter/core/handler.clj
+ create mode 100644 test/chatter/core/handler_test.clj
+
+</pre>
+</div>
 
 Now when we ask git for the status:
 
-    $: git status
-    On branch master
-    nothing to commit, working directory clean
+<div class= "console"><pre>
+$: git status
+On branch master
+nothing to commit, working directory clean
+</pre>
+</div>
 
 OK, there haven't been any changes since our last commit, so there's
 nothing to see.  Let's check the log.
 
-    $: git log
-    commit 44a560f1653770afac01aea2c9279a7af46a46eb
-    Author: crkoehnen <crkoehnen@gmail.com>
-    Date:   Sun Dec 28 16:43:37 2014 -0600
+<div class= "console"><pre>
+$: git log
+commit 44a560f1653770afac01aea2c9279a7af46a46eb
+Author: crkoehnen <crkoehnen@gmail.com>
+Date:   Sun Dec 28 16:43:37 2014 -0600
 
-        initial commit
-
+    initial commit
+</pre>
+</div>
 
 We see there's been one commit, the commit hash (which uniquely identifies
 every commit), the author's name, the date, and the commit comment.
@@ -585,18 +623,22 @@ will open a page for your new repository.  We want to push an existing
 repository, so (be sure to use the url that GitHub gives you instead
 of mine!) :
 
-    $: git remote add origin https://github.com/crkoehnen/chatter.git
-    $: git push -u origin master
-    Username for 'https://github.com': crkoehnen
-    Password for 'https://crkoehnen@github.com':
-    Counting objects: 13, done.
-    Delta compression using up to 4 threads.
-    Compressing objects: 100% (7/7), done.
-    Writing objects: 100% (13/13), 1.54 KiB | 0 bytes/s, done.
-    Total 13 (delta 0), reused 0 (delta 0)
-    To https://github.com/crkoehnen/chatter.git
-    * [new branch]      master -> master
-    Branch master set up to track remote branch master from origin.
+<div class= "console"><pre>
+$: git remote add origin https://github.com/crkoehnen/chatter.git
+$: git push -u origin master
+Username for 'https://github.com': crkoehnen
+Password for 'https://crkoehnen@github.com':
+Counting objects: 13, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (13/13), 1.54 KiB | 0 bytes/s, done.
+Total 13 (delta 0), reused 0 (delta 0)
+To https://github.com/crkoehnen/chatter.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+
+</pre>
+</div>
 
 Back on GitHub, click on the "chatter" link and you'll go to the main
 page for the repository.  Note there is a single commit and the text
@@ -629,38 +671,54 @@ Let's start with something small and fix the readme.
 Branching tells git that we want to start working on some changes and
 we're going to give them a name.
 
-    $: git status
-    On branch master
-    Your branch is up-to-date with 'origin/master'.
-    nothing to commit, working directory clean
+<div class= "console"><pre>
+$: git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working directory clean
+</pre>
+</div>
 
 To create a branch, use the "git branch" command and give it the name
 for the new branch.
 
-    $: git branch fix-readme
+<div class= "console"><pre>
+$: git branch fix-readme
+</pre>
+</div>
 
 Without the branch name, `git branch` lists what branches exist.
 
-    $: git branch
-    fix-readme
-    * master
+<div class= "console"><pre>
+$: git branch
+  fix-readme
+* master
+</pre>
+</div>
 
 Notice there's now two branches, `master` and `fix-readme`.  Master has
 an asterix by it because we're still on master.  We need to switch to
 `fix-readme`.
 
-    $: git checkout fix-readme
-    Switched to branch 'fix-readme'
+<div class= "console"><pre>
+$: git checkout fix-readme
+Switched to branch 'fix-readme'
+</pre>
+</div>
 
+<div class= "console"><pre>
+$: git branch
+* fix-readme
+  master
+</pre>
+</div>
 
-    $: git branch
-    * fix-readme
-    master
-
-
-    $: git status
-    On branch fix-readme
-    nothing to commit, working directory clean
+<div class= "console"><pre>
+$: git status
+On branch fix-readme
+nothing to commit, working directory clean
+</pre>
+</div>
 
 Now we're on the `fix-readme` branch.
 
@@ -676,39 +734,43 @@ Open the `README.md` file and replace the two FIXMEs.  Save the file.
 Now, if you ask git for the status, it will show that `README.md` has
 changed.
 
-    $: git status
-    On branch fix-readme
-    Changes not staged for commit:
-    (use "git add <file>..." to update what will be committed)
-    (use "git checkout -- <file>..." to discard changes in working directory)
+<div class= "console"><pre>
+$: git status
+On branch fix-readme
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
 
-        modified:   README.md
+	modified:   README.md
 
-    no changes added to commit (use "git add" and/or "git commit -a")
+no changes added to commit (use "git add" and/or "git commit -a")
+</pre>
+</div>
 
 We can ask git to show us exactly what changed.
 
+<div class= "console"><pre>
+$: git diff
+diff --git a/README.md b/README.md
+index 9493433..718893f 100644
+--- a/README.md
++++ b/README.md
+@@ -1,6 +1,6 @@
+ # chatter
 
-    $: git diff
-    diff --git a/README.md b/README.md
-    index 9493433..718893f 100644
-    --- a/README.md
-    +++ b/README.md
-    @@ -1,6 +1,6 @@
-    # chatter
+-FIXME
++This is a web app that will display posted messages.
 
-    -FIXME
-    +This is a web app that will display posted messages.
+ ## Prerequisites
 
-     ## Prerequisites
+@@ -16,4 +16,4 @@ To start a web server for the application, run:
 
-    @@ -16,4 +16,4 @@ To start a web server for the application, run:
+ ## License
 
-     ## License
-
-    -Copyright © 2014 FIXME
-    +Copyright © 2014 clojurebridgemn.org
-
+-Copyright © 2014 FIXME
++Copyright © 2014 clojurebridgemn.org
+</pre>
+</div>
 
 `git diff` is telling us that the `README.md` file changed.  I removed
 the line that said "FIXME" and added a line saying "This is a web app
@@ -720,58 +782,76 @@ change the description in `project.clj` file.  Make the change and save
 that file too.  Now the git status should be:
 
 
-    $: git status
-    On branch fix-readme
-    Changes not staged for commit:
-      (use "git add <file>..." to update what will be committed)
-      (use "git checkout -- <file>..." to discard changes in working directory)
+<div class= "console"><pre>
+$: git status
+On branch fix-readme
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
 
-        modified:   README.md
-        modified:   project.clj
+	modified:   README.md
+	modified:   project.clj
 
-    no changes added to commit (use "git add" and/or "git commit -a")
+no changes added to commit (use "git add" and/or "git commit -a")
+</pre>
+</div>
 
 #### Adding and Committing the changes
 
 Let's add and commit the changes.
 
-    $: git add README.md project.clj
+<div class= "console"><pre>
+$: git add README.md project.clj
+</pre>
+</div>
 
-
-    $: git status
-    On branch fix-readme
-    Changes to be committed:
-      (use "git reset HEAD <file>..." to unstage)
+<div class= "console"><pre>
+$: git status
+On branch fix-readme
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
 
 	modified:   README.md
 	modified:   project.clj
 
+</pre>
+</div>
 
-    $ git commit README.md project.clj -m "fixing README.md description"
-    [fix-readme 57aff88] fixing README.md description
-     2 files changed, 3 insertions(+), 3 deletions(-)
+<div class= "console"><pre>
+$ git commit README.md project.clj -m "fixing README.md description"
+[fix-readme 57aff88] fixing README.md description
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+</pre>
+</div>
 
 Now git status reports no uncommitted changes, but we're still on the
 fix-me branch.
 
-    $: git status
-    On branch fix-readme
-    nothing to commit, working directory clean
+<div class= "console"><pre>
+$: git status
+On branch fix-readme
+nothing to commit, working directory clean
+</pre>
+</div>
 
 Let's the check the log.
 
-    $: git log
-    commit 57aff889c81698394faf8568b63f14130d32599a
-    Author: crkoehnen <crkoehnen@gmail.com>
-    Date:   Sun Dec 28 17:33:41 2014 -0600
+<div class= "console"><pre>
+$: git log
+commit 57aff889c81698394faf8568b63f14130d32599a
+Author: crkoehnen <crkoehnen@gmail.com>
+Date:   Sun Dec 28 17:33:41 2014 -0600
 
-        fixing README.md description
+    fixing README.md description
 
-    commit 44a560f1653770afac01aea2c9279a7af46a46eb
-    Author: crkoehnen <crkoehnen@gmail.com>
-    Date:   Sun Dec 28 16:43:37 2014 -0600
+commit 44a560f1653770afac01aea2c9279a7af46a46eb
+Author: crkoehnen <crkoehnen@gmail.com>
+Date:   Sun Dec 28 16:43:37 2014 -0600
 
-        initial commit
+    initial commit
+$:
+</pre>
+</div>
 
 Two commits, the last commit from our originating branch and our
 new commit.
@@ -781,65 +861,84 @@ new commit.
 Let's merge our changes into the `master` branch.  First, let's checkout
 `master` and check its log.
 
-    $: git checkout master
-    Switched to branch 'master'
-    Your branch is up-to-date with 'origin/master'.
+<div class= "console"><pre>
+$: git checkout master
+Switched to branch 'master'
+Your branch is up-to-date with 'origin/master'.
+</pre>
+</div>
 
-    $: git log
-    commit 44a560f1653770afac01aea2c9279a7af46a46eb
-    Author: crkoehnen <crkoehnen@gmail.com>
-    Date:   Sun Dec 28 16:43:37 2014 -0600
 
-        initial commit
+<div class= "console"><pre>
+$: git log
+commit 44a560f1653770afac01aea2c9279a7af46a46eb
+Author: crkoehnen <crkoehnen@gmail.com>
+Date:   Sun Dec 28 16:43:37 2014 -0600
+
+    initial commit
+</pre>
+</div>
 
 Note that `master` is lagging behind.  It doesn't have the commit with
 the README changes.  We can fix that by merging our `fix-me` branch into
 the `master` branch.
 
-    $: git merge fix-readme
-    Updating 44a560f..57aff88
-    Fast-forward
-     README.md   | 4 ++--
-     project.clj | 2 +-
-     2 files changed, 3 insertions(+), 3 deletions(-)
+<div class= "console"><pre>
+$: git merge fix-readme
+Updating 44a560f..57aff88
+Fast-forward
+ README.md   | 4 ++--
+ project.clj | 2 +-
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+</pre>
+</div>
 
 The merge brought in the changes.  If we check the log, we'll see two
 commits now.
 
-    $: git log
-    commit 57aff889c81698394faf8568b63f14130d32599a
-    Author: crkoehnen <crkoehnen@gmail.com>
-    Date:   Sun Dec 28 17:33:41 2014 -0600
+<div class= "console"><pre>
+$: git log
+commit 57aff889c81698394faf8568b63f14130d32599a
+Author: crkoehnen <crkoehnen@gmail.com>
+Date:   Sun Dec 28 17:33:41 2014 -0600
 
-        fixing README.md description
+    fixing README.md description
 
-    commit 44a560f1653770afac01aea2c9279a7af46a46eb
-    Author: crkoehnen <crkoehnen@gmail.com>
-    Date:   Sun Dec 28 16:43:37 2014 -0600
+commit 44a560f1653770afac01aea2c9279a7af46a46eb
+Author: crkoehnen <crkoehnen@gmail.com>
+Date:   Sun Dec 28 16:43:37 2014 -0600
 
-        initial commit
+    initial commit
+</pre>
+</div>
 
 #### Deleting the fix-readme branch
 
 Now that we've pulled the changes from the fix-readme branch into
 master, we no longer need the `fix-readme` branch, so let's delete it.
 
-    $: git branch -d fix-readme
+<div class= "console"><pre>
+$: git branch -d fix-readme
+</pre>
+</div>
 
 #### Pushing to GitHub
 
 The final step will be to push our changes to GitHub.
 
-    $: git push origin master
-    Username for 'https://github.com': crkoehnen
-    Password for 'https://crkoehnen@github.com':
-    Counting objects: 4, done.
-    Delta compression using up to 4 threads.
-    Compressing objects: 100% (4/4), done.
-    Writing objects: 100% (4/4), 572 bytes | 0 bytes/s, done.
-    Total 4 (delta 2), reused 0 (delta 0)
-    To https://github.com/crkoehnen/chatter.git
-       44a560f..57aff88  master -> master
+<div class= "console"><pre>
+$: git push origin master
+Username for 'https://github.com': crkoehnen
+Password for 'https://crkoehnen@github.com':
+Counting objects: 4, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 572 bytes | 0 bytes/s, done.
+Total 4 (delta 2), reused 0 (delta 0)
+To https://github.com/crkoehnen/chatter.git
+   44a560f..57aff88  master -> master
+</pre>
+</div>
 
 Now go back to the repository page in GitHub and refresh the page.
 You should see the text and the commit count change.
@@ -899,7 +998,10 @@ Let's use hiccup to generate the html by changing `app-routes`:
 
 Start the server:
 
-    $: lein ring server
+<div class= "console"><pre>
+$: lein ring server
+</pre>
+</div>
 
 You'll see that `http://localhost:3000` now proudly displays "Our Chat
 App".  And if you `View Page Source`, you'll see that now it's
@@ -998,17 +1100,19 @@ still works.  From the outside, we shouldn't see a change.  The page
 should still display "Our Chat App" and the html should be identical.
 Now, let's double check our git status:
 
+<div class= "console"><pre>
+$: git status
+On branch view-messages
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
 
-    $: git status
-    On branch view-messages
-    Changes not staged for commit:
-       (use "git add <file>..." to update what will be committed)
-       (use "git checkout -- <file>..." to discard changes in working directory)
+	modified:   project.clj
+	modified:   src/chatter/core/handler.clj
 
-          modified:   project.clj
-          modified:   src/chatter/core/handler.clj
-
-    no changes added to commit (use "git add" and/or "git commit -a")
+no changes added to commit (use "git add" and/or "git commit -a")
+</pre>
+</div>
 
 That looks right so let's add, commit, merge the changes back to
 master, and then push to GitHub.  Then, delete the `view-messages` branch.
@@ -1884,38 +1988,41 @@ The final command will open the browser and point it at your app on Heroku.
 
 Try the traceroute command again against the address Heroku assigned your app:
 
-    $: traceroute obscure-brushlands-9918.herokuapp.com
-    traceroute to obscure-brushlands-9918.herokuapp.com (50.16.239.160), 30 hops max, 60 byte packets
-    1  192.168.1.1 (192.168.1.1)  15.820 ms  15.797 ms  15.773 ms
-    2  96.120.49.33 (96.120.49.33)  23.895 ms  25.196 ms  25.192 ms
-    3  te-0-2-0-6-sur01.webster.mn.minn.comcast.net (68.85.167.145)  25.179 ms  25.168 ms  25.362 ms
-    4  te-0-7-0-13-ar01.crosstown.mn.minn.comcast.net (68.87.174.189)  30.743 ms  31.979 ms te-0-7-0-12-ar01.crosstown.mn.minn.comcast.net (69.139.219.129)  31.979 ms
-    5  pos-0-0-0-0-ar01.roseville.mn.minn.comcast.net (68.87.174.194)  31.967 ms * *
-    6  he-1-12-0-0-cr01.350ecermak.il.ibone.comcast.net (68.86.94.77)  39.269 ms  25.568 ms  26.422 ms
-    7  be-10206-cr01.newyork.ny.ibone.comcast.net (68.86.86.225)  45.276 ms  63.727 ms  66.090 ms
-    8  he-0-11-0-0-pe03.111eighthave.ny.ibone.comcast.net (68.86.83.98)  58.386 ms  58.374 ms  58.358 ms
-    9  as16509-3-c.111eighthave.ny.ibone.comcast.net (50.242.148.118)  56.143 ms  58.280 ms  65.988 ms
-    10  54.240.229.76 (54.240.229.76)  65.977 ms 54.240.229.82 (54.240.229.82)  65.982 ms *
-    11  54.240.228.190 (54.240.228.190)  65.874 ms 54.240.228.202 (54.240.228.202)  65.888 ms 54.240.228.196 (54.240.228.196)  65.969 ms
-    12  54.240.229.223 (54.240.229.223)  42.112 ms 54.240.229.200 (54.240.229.200)  45.620 ms 54.240.229.221 (54.240.229.221)  47.673 ms
-    13  54.240.228.173 (54.240.228.173)  47.630 ms 54.240.228.177 (54.240.228.177)  52.382 ms 54.240.228.173 (54.240.228.173)  45.498 ms
-    14  72.21.220.100 (72.21.220.100)  52.589 ms 72.21.220.116 (72.21.220.116)  52.527 ms 54.240.228.139 (54.240.228.139)  50.825 ms
-    15  72.21.220.135 (72.21.220.135)  56.875 ms 72.21.220.167 (72.21.220.167)  59.011 ms 72.21.220.151 (72.21.220.151)  59.014 ms
-    16  72.21.220.108 (72.21.220.108)  48.813 ms 205.251.245.242 (205.251.245.242)  49.425 ms  48.614 ms
-    17  * * *
-    18  * * *
-    19  * * *
-    20  216.182.224.85 (216.182.224.85)  55.704 ms 216.182.224.223 (216.182.224.223)  66.895 ms 216.182.224.227 (216.182.224.227)  54.629 ms
-    21  * * *
-    22  * * *
-    23  * * *
-    24  * * *
-    25  * * *
-    26  * * *
-    27  * * *
-    28  * * *
-    29  * * *
-    30  * * *
+<div class= "console"><pre>
+$: traceroute obscure-brushlands-9918.herokuapp.com
+traceroute to obscure-brushlands-9918.herokuapp.com (50.16.239.160), 30 hops max, 60 byte packets
+ 1  192.168.1.1 (192.168.1.1)  15.820 ms  15.797 ms  15.773 ms
+ 2  96.120.49.33 (96.120.49.33)  23.895 ms  25.196 ms  25.192 ms
+ 3  te-0-2-0-6-sur01.webster.mn.minn.comcast.net (68.85.167.145)  25.179 ms  25.168 ms  25.362 ms
+ 4  te-0-7-0-13-ar01.crosstown.mn.minn.comcast.net (68.87.174.189)  30.743 ms  31.979 ms te-0-7-0-12-ar01.crosstown.mn.minn.comcast.net (69.139.219.129)  31.979 ms
+ 5  pos-0-0-0-0-ar01.roseville.mn.minn.comcast.net (68.87.174.194)  31.967 ms * *
+ 6  he-1-12-0-0-cr01.350ecermak.il.ibone.comcast.net (68.86.94.77)  39.269 ms  25.568 ms  26.422 ms
+ 7  be-10206-cr01.newyork.ny.ibone.comcast.net (68.86.86.225)  45.276 ms  63.727 ms  66.090 ms
+ 8  he-0-11-0-0-pe03.111eighthave.ny.ibone.comcast.net (68.86.83.98)  58.386 ms  58.374 ms  58.358 ms
+ 9  as16509-3-c.111eighthave.ny.ibone.comcast.net (50.242.148.118)  56.143 ms  58.280 ms  65.988 ms
+10  54.240.229.76 (54.240.229.76)  65.977 ms 54.240.229.82 (54.240.229.82)  65.982 ms *
+11  54.240.228.190 (54.240.228.190)  65.874 ms 54.240.228.202 (54.240.228.202)  65.888 ms 54.240.228.196 (54.240.228.196)  65.969 ms
+12  54.240.229.223 (54.240.229.223)  42.112 ms 54.240.229.200 (54.240.229.200)  45.620 ms 54.240.229.221 (54.240.229.221)  47.673 ms
+13  54.240.228.173 (54.240.228.173)  47.630 ms 54.240.228.177 (54.240.228.177)  52.382 ms 54.240.228.173 (54.240.228.173)  45.498 ms
+14  72.21.220.100 (72.21.220.100)  52.589 ms 72.21.220.116 (72.21.220.116)  52.527 ms 54.240.228.139 (54.240.228.139)  50.825 ms
+15  72.21.220.135 (72.21.220.135)  56.875 ms 72.21.220.167 (72.21.220.167)  59.011 ms 72.21.220.151 (72.21.220.151)  59.014 ms
+16  72.21.220.108 (72.21.220.108)  48.813 ms 205.251.245.242 (205.251.245.242)  49.425 ms  48.614 ms
+17  * * *
+18  * * *
+19  * * *
+20  216.182.224.85 (216.182.224.85)  55.704 ms 216.182.224.223 (216.182.224.223)  66.895 ms 216.182.224.227 (216.182.224.227)  54.629 ms
+21  * * *
+22  * * *
+23  * * *
+24  * * *
+25  * * *
+26  * * *
+27  * * *
+28  * * *
+29  * * *
+30  * * *
+</pre>
+</div>
 
 Try going to each other's app.
 
